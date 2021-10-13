@@ -73,12 +73,7 @@
             }
             req.send(data);
         }
-        ContentstackUIExtension.init().then(function (extension) {
-            console.log("Hello world!");
-            var value = extension.field.getData()
-            console.log(value)
-           // extension.field.setData("New Field Data")
-        })
+
         function loadDemoTemplate(callback) {
             
             request('GET', 'https://raw.githubusercontent.com/ardas/stripo-plugin/master/Public-Templates/Basic-Templates/Trigger%20newsletter%20mockup/Trigger%20newsletter%20mockup.html', null, function(html) {
