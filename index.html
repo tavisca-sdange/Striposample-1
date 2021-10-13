@@ -60,6 +60,10 @@
     <script src="https://unpkg.com/@contentstack/ui-extensions-sdk@2.2.0/dist/ui-extension-sdk.js"></script>
 <link href="https://unpkg.com/@contentstack/ui-extensions-sdk@2.2.0/dist/ui-extension-sdk.css" rel="stylesheet" >
     <script>
+        ContentstackUIExtension.init().then(function (extension) {
+    var value = extension.field.getData()
+    extension.field.setData("New Field Data")
+})
         // Utility methods
         function request(method, url, data, callback) {
             var req = new XMLHttpRequest();
