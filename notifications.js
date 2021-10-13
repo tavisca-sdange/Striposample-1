@@ -1,4 +1,5 @@
 var notifications = {
+    console.log("testing js")
     autoCloseTimeout: 4000,
     container: '.notification-zone',
     error: function (text, id, params) {
