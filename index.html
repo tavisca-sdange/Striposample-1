@@ -58,7 +58,18 @@
     <script type="application/javascript" src="notifications.js"></script>
     <script src="https://unpkg.com/@contentstack/ui-extensions-sdk@2.2.0/dist/ui-extension-sdk.js"></script>
     <script>
-
+ 
+         window.extensionField = {};
+      ContentstackUIExtension.init().then(function(extension) {
+           extensionField = extension;
+        var readOnlyFlied = document.getElementById("readOnly");
+          console.log(extensionField.config.name,extension)
+        if(extensionField.config.name){
+            readOnlyFlied.value=extensionField.config.name;
+        }
+          extensionField.window.updateHeight();
+      })       
+    
         // Utility methods
         function request(method, url, data, callback) {
             var req = new XMLHttpRequest();
@@ -182,10 +193,6 @@
         });*/
         
     </script>
-     <script>
-      ContentstackUIExtension.init().then(function(extension) {
-        console.log(extension.config)
-      })       
-    </script>
+    <p><span id="name"></span></p>
 </body>
 </html>
