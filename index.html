@@ -62,12 +62,9 @@
          window.extensionField = {};
       ContentstackUIExtension.init().then(function(extension) {
            extensionField = extension;
-        var readOnlyFlied = document.getElementById("name");
+       document.getElementById("name").Value(extensionField.config.name);
           console.log("working")
           console.log(extensionField.config.name,extension)
-        if(extensionField.config.name){
-            readOnlyFlied.value=extensionField.config.name;
-        }
           extensionField.window.updateHeight();
       })       
     
@@ -195,7 +192,7 @@
         
     </script>
     <label id="name">html</label>
-    <p><span id="name"></span></p>
+    <p><span id="name">vijayakumar</span></p>
     <lable
 </body>
 </html>
