@@ -110,6 +110,19 @@
             script.src = 'https://plugins.stripo.email/static/latest/stripo.js';
             script.onload = function () {
                 window.Stripo.init({
+                    
+    "mergeTags": [
+        {
+            "category": "MailChimp",
+            "entries": [
+                {
+                    "label": "First Name",
+                    "value": "*|FNAME|*"
+                }
+            ]
+        }
+    ]
+
                     extensions:[{globalName: 'DemoHeaderBlockExtension',url:'https://tavisca-vvijayakumar.github.io/CustomBlock/main.extension.js'},
                                 {globalName: 'ProductBlockExtension',url:'https://tavisca-vvijayakumar.github.io/ProductBlock/ProductBlock/main.extension_Product.js'}],
                 productDemoBlock: {
