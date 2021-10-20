@@ -63,6 +63,7 @@
       ContentstackUIExtension.init().then(function(extension) {
            extensionField = extension;
         var readOnlyFlied = document.getElementById("readOnly");
+          console.log("working")
           console.log(extensionField.config.name,extension)
         if(extensionField.config.name){
             readOnlyFlied.value=extensionField.config.name;
