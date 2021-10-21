@@ -60,14 +60,14 @@
     <script>
  
          window.extensionField = {};
-        window.pluginIdval = {};
-        window.secretKeyval = {};
+      //  window.pluginIdval = {};
+       // window.secretKeyval = {};
       ContentstackUIExtension.init().then(function(extension) {
            extensionField = extension;
        document.getElementById("name").innerHTML =extensionField.config.name;
-          pluginIdval = extensionField.config.pluginId;
-          secretKeyval =extensionField.config.secretKey;
-          console.log(pluginIdval,secretKeyval)
+        //  pluginIdval = extensionField.config.pluginId;
+        //  secretKeyval =extensionField.config.secretKey;
+         // console.log(pluginIdval,secretKeyval)
           console.log("working")
           console.log(extensionField.config.name,extension)
           extensionField.window.updateHeight();
