@@ -102,6 +102,19 @@
                 });
             });
         }
+          function Sendhtmlcodetos3(html) {
+            const userAction = async () => {
+                const response = await fetch('http://example.com/movies.json', {
+                    method: 'POST',
+                    body: "vijay", // string or object
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                const myJson = await response.json(); //extract JSON from the http response
+                console.log(myJson);
+            }
+        }
     </script>
 
     <script>
@@ -182,10 +195,12 @@
         document.querySelector("#compileHtmlClient").addEventListener('click', function() {
             // This is the way to get compiled HTML code on client side
             window.StripoApi.compileEmail(function(error, html) {
+                console
                 if (error) {
                     alert('Can not compile HTML: ' + error);
                 } else {
                      console.log('Compiled HTML: ', html);
+                     Sendhtmlcodetos3(html)
                 }
             });
         });
