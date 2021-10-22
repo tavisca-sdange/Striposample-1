@@ -108,7 +108,7 @@
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
             var myObj = JSON.parse(this.responseText);
-           console.log( myObj.high);
+           console.log( myObj);
         }
     };
     xmlhttp.open("GET", "https://trdtrgsfb0.execute-api.us-east-1.amazonaws.com/Prod/api/values", true);
