@@ -62,10 +62,10 @@
     <script type="application/javascript" src="notifications.js"></script>
     <script src="https://unpkg.com/@contentstack/ui-extensions-sdk@2.2.0/dist/ui-extension-sdk.js"></script>
     <script>
- 
+         window.updateHeight(900PX);
          window.extensionField = {};
-      //  window.pluginIdval = {};
-       // window.secretKeyval = {};
+         //window.pluginIdval = {};
+         // window.secretKeyval = {};
       ContentstackUIExtension.init().then(function(extension) {
            extensionField = extension;
        document.getElementById("name").innerHTML =extensionField.config.name;
