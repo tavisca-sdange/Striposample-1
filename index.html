@@ -120,39 +120,7 @@
             script.onload = function () {
                 window.Stripo.init({
                     
-    mergeTags: [
-        {
-            "category": "Flightdetail",
-            "entries": MyObj
-        },
-        {
-            "category": "Hotel Detail",
-            "entries": [
-              {
-                    "label": "Flight Name",
-                    "value": "air india",
-                },
-                {
-                  "label": "Flight Number",
-                    "value": "EK 345"
-                },
-                 {
-                  "label": "Depart",
-                    "value": "10 0ct 21/10:30"
-                }, 
-                {
-                  "label": "Arrive",
-                    "value": "10 0ct 21/13:30"
-                },
-                 
-                {
-                  "label": "Airport/Terminal",
-                    "value": "Chennai/Terminal 1"
-                },
-            ]
-        }
-    ],
-
+    mergeTags: MyObj,
                     extensions:[{globalName: 'DemoHeaderBlockExtension',url:'https://tavisca-vvijayakumar.github.io/CustomBlock/main.extension.js'},
                                 {globalName: 'ProductBlockExtension',url:'https://tavisca-vvijayakumar.github.io/ProductBlock/ProductBlock/main.extension_Product.js'}],
                 productDemoBlock: {
@@ -238,10 +206,12 @@
     </script>
     <script>
         $( document ).ready(function() {
-           MyObj =   [
-                {
+           MyObj =   [{
+  "category": "Flight detail",  
+  "entries":[
+              {
                     "label": "Flight Name",
-                    "value": "air india"
+                    "value": "air india",
                 },
                 {
                   "label": "Flight Number",
@@ -259,7 +229,35 @@
                 {
                   "label": "Airport/Terminal",
                     "value": "Chennai/Terminal 1"
-                }]
+                },
+            ]
+ },
+{
+  "category": "Hotel detail",  
+  "entries":[
+              {
+                    "label": "Flight Name",
+                    "value": "air india",
+                },
+                {
+                  "label": "Flight Number",
+                    "value": "EK 345"
+                },
+                 {
+                  "label": "Depart",
+                    "value": "10 0ct 21/10:30"
+                }, 
+                {
+                  "label": "Arrive",
+                    "value": "10 0ct 21/13:30"
+                },
+                 
+                {
+                  "label": "Airport/Terminal",
+                    "value": "Chennai/Terminal 1"
+                },
+            ]
+ }]
            console.log(MyObj)
        });
         </script>
