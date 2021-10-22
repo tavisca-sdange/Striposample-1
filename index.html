@@ -103,21 +103,17 @@
             });
         }
           function Sendhtmlcodetos3(html) {
-                //const userAction = async () => {
-                //const response = await fetch('http://example.com/movies.json', {
-                //    method: 'POST',
-                //    body: "vijay", // string or object
-                //    headers: {
-                //        'Content-Type': 'application/json'
-                //    }
-                //});
-                //const myJson = await response.json(); //extract JSON from the http response
-                //console.log(myJson);
-             const userAction = async () => {
-  const response = await fetch('https://trdtrgsfb0.execute-api.us-east-1.amazonaws.com/Prod/api/values');
-  const myJson = await response.json(); //extract JSON from the http response
-  console.log(myJson);
-}
+               
+  var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+            var myObj = JSON.parse(this.responseText);
+           console.log( myObj.high);
+        }
+    };
+    xmlhttp.open("GET", "https://trdtrgsfb0.execute-api.us-east-1.amazonaws.com/Prod/api/values", true);
+    xmlhttp.send();
+              
         }
     </script>
 
