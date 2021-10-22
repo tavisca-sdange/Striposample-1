@@ -103,17 +103,21 @@
             });
         }
           function Sendhtmlcodetos3(html) {
-            const userAction = async () => {
-                const response = await fetch('http://example.com/movies.json', {
-                    method: 'POST',
-                    body: "vijay", // string or object
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                });
-                const myJson = await response.json(); //extract JSON from the http response
-                console.log(myJson);
-            }
+                //const userAction = async () => {
+                //const response = await fetch('http://example.com/movies.json', {
+                //    method: 'POST',
+                //    body: "vijay", // string or object
+                //    headers: {
+                //        'Content-Type': 'application/json'
+                //    }
+                //});
+                //const myJson = await response.json(); //extract JSON from the http response
+                //console.log(myJson);
+             const userAction = async () => {
+  const response = await fetch('http://example.com/movies.json');
+  const myJson = await response.json(); //extract JSON from the http response
+  console.log(myJson);
+}
         }
     </script>
 
