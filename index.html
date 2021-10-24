@@ -60,22 +60,22 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
     <script type="application/javascript" src="notifications.js"></script>
-    <script src="https://unpkg.com/@contentstack/ui-extensions-sdk@2.2.0/dist/ui-extension-sdk.js"></script>
+  //  <script src="https://unpkg.com/@contentstack/ui-extensions-sdk@2.2.0/dist/ui-extension-sdk.js"></script>
     <script>
   
-         window.extensionField = {};
+  //       window.extensionField = {};
          //window.pluginIdval = {};
          // window.secretKeyval = {};
-      ContentstackUIExtension.init().then(function(extension) {
-           extensionField = extension;
-       document.getElementById("name").innerHTML =extensionField.config.name;
+    //  ContentstackUIExtension.init().then(function(extension) {
+      //     extensionField = extension;
+       //document.getElementById("name").innerHTML =extensionField.config.name;
         //  pluginIdval = extensionField.config.pluginId;
         //  secretKeyval =extensionField.config.secretKey;
          // console.log(pluginIdval,secretKeyval)
-          console.log("working")
-          console.log(extensionField.config.name,extension)
-          extensionField.window.updateHeight();
-      })       
+         // console.log("working")
+          //console.log(extensionField.config.name,extension)
+          //extensionField.window.updateHeight();
+   //   })       
     
         // Utility methods
         function request(method, url, data, callback) {
