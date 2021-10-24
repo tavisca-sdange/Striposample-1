@@ -115,6 +115,13 @@
     xmlhttp.send();
               
         }
+        
+        function receiveMessage(evt)
+{
+ 
+    alert("got message: "+evt.data);
+  
+}
     </script>
 
     <script>
@@ -221,6 +228,7 @@
     </script>
     <script>
         $( document ).ready(function() {
+            window.addEventListener('message', receiveMessage, false);
            MyObj =   [{
   "category": "Flight detail",  
   "entries":[
