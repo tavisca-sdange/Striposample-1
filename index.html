@@ -43,6 +43,7 @@
 // Allow window to listen for a postMessage
     window.addEventListener("message", (event)=>{
         alert(event.data) 
+        location.reload();
            pluginIdval =  event.data.pName;
           secretKeyval = event.data.pCity;
        // document.getElementById("name").innerHTML =(`Name is ${event.data.pName} city is  ${event.data.pCity}`);
