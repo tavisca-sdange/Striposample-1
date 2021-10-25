@@ -41,14 +41,15 @@
              var pluginIdval = {};
         var secretKeyval = {};
 // Allow window to listen for a postMessage
-    window.addEventListener("message", (event)=>{
-        alert(event.data) 
-        location.reload();
-           pluginIdval =  event.data.pName;
-          secretKeyval = event.data.pCity;
+         window.addEventListener('message', myFunction(event));
+    //window.addEventListener("message", (event)=>{
+     //   alert(event.data) 
+      //  location.reload();
+        //   pluginIdval =  event.data.pName;
+         // secretKeyval = event.data.pCity;
        // document.getElementById("name").innerHTML =(`Name is ${event.data.pName} city is  ${event.data.pCity}`);
-        console.log(`Name is ${event.data.pName} city is  ${event.data.pCity}`);
-    });
+        //console.log(`Name is ${event.data.pName} city is  ${event.data.pCity}`);
+    //});
 function closeMe() {
         try {
 window.close();
@@ -82,6 +83,14 @@ self.close();
     <script type="application/javascript" src="notifications.js"></script>
     <script src="https://unpkg.com/@contentstack/ui-extensions-sdk@2.2.0/dist/ui-extension-sdk.js"></script>
     <script>
+         function myFunction(event)
+        {
+            console.log(event.data);
+               window.pluginIdval = {};
+               window.secretKeyval = {};
+               pluginIdval = event.date.pName;
+               secretKeyval =event.data.pCity;
+        }
   
   //       window.extensionField = {};
          //window.pluginIdval = {};
@@ -98,6 +107,7 @@ self.close();
    //   })       
     
         // Utility methods
+        
         function request(method, url, data, callback) {
             var req = new XMLHttpRequest();
             req.onreadystatechange = function () {
