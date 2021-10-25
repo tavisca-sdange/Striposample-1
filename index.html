@@ -103,19 +103,19 @@
             });
         }
           function Sendhtmlcodetos3(html) {
-              var template = "stripotemplate"
-              var htmlstr = "";
-                var params = "TemplateName="+template"&TemplateHtml="+htmlstr
-              var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-            var myObj = this.responseText;
-           console.log( myObj);
-        }
-    };
-    xmlhttp.open("POST", "https://amt0x2kkbl.execute-api.us-east-1.amazonaws.com/Prod/templatestore", true);
-    xmlhttp.send(params);
-              
+            const params = {
+    TemplateName: "stripotemplate",
+    TemplateHtml: html; 
+};
+const options = {
+    method: 'POST',
+    body: JSON.stringify( params )  
+};
+fetch( 'https://amt0x2kkbl.execute-api.us-east-1.amazonaws.com/Prod/templatestore', options )
+    .then( response => response.json() )
+    .then( response => {
+       console.log(response)
+    } );
         }
     </script>
 
