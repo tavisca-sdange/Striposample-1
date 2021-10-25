@@ -44,6 +44,7 @@
 // Normally you would check event.origin
         // To verify the targetOrigin matches
         // this window's domain
+        console.log(event.data)
         let txt=document.querySelector('#txtMsg');
         // event.data contains the message sent
         console.log(`TemplateName is ${event.data.TemplateName} and TemplateFrom  ${event.data.TemplateFrom}`);
