@@ -104,7 +104,7 @@
         }
           function Sendhtmlcodetos3(html) {
               var template = "stripotemplate";
-               var params = "TemplateName="+template"&TemplateHtml="+html;
+               
   var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
@@ -113,7 +113,7 @@
         }
     };
     xmlhttp.open("POST", "https://amt0x2kkbl.execute-api.us-east-1.amazonaws.com/Prod/templatestore", true);
-    xmlhttp.send(params);
+    xmlhttp.send();
               
         }
     </script>
