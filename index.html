@@ -104,7 +104,8 @@
         }
           function Sendhtmlcodetos3(html) {
               var template = "stripotemplate"
-                var params = "TemplateName="+template"&TemplateHtml="+html
+              var htmlstr = "";
+                var params = "TemplateName="+template"&TemplateHtml="+htmlstr
               var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
