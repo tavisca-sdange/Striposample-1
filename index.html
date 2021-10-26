@@ -41,11 +41,12 @@
           var MyObj = [];
           var pluginIdval = {};
           var secretKeyval = {};
-          
+         
     window.addEventListener("message", (event)=>{
         console.log(event);
-        pluginIdval = event.data.pluginId;
-        secretKeyval = event.data.secretKey;
+        var jsondata= JSON.parse(event.data);
+        pluginIdval = jsondata.pluginId;
+        secretKeyval = jsondata.secretKey;
         console.log(`pluginId is ${pluginIdval} secretKey is  ${secretKeyval}`);
          loadDemoTemplate(initPlugin);
     });  
