@@ -47,6 +47,7 @@
         pluginIdval = event.data.pluginId;
         secretKeyval = event.data.secretKey;
         console.log(`pluginId is ${pluginIdval} secretKey is  ${secretKeyval}`);
+         loadDemoTemplate(initPlugin);
     });  
     </script>
 
@@ -213,7 +214,7 @@ fetch( 'https://amt0x2kkbl.execute-api.us-east-1.amazonaws.com/Prod/templatestor
             document.body.appendChild(script);
         }
 
-        loadDemoTemplate(initPlugin);
+       // loadDemoTemplate(initPlugin);
         document.querySelector("#compileHtmlClient").addEventListener('click', function() {
             // This is the way to get compiled HTML code on client side
             window.StripoApi.compileEmail(function(error, html) {
