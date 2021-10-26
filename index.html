@@ -36,28 +36,19 @@
         }
         
     </style>
+
      <script type="text/javascript">
           var MyObj = [];
-             var pluginIdval = {};
-        var secretKeyval = {};
-// Allow window to listen for a postMessage
+          var pluginIdval = {};
+          var secretKeyval = {};
+          
     window.addEventListener("message", (event)=>{
-     alert(event.data) 
-        pluginIdval =  event.data.pName;
-       secretKeyval = event.data.pCity;
-       document.getElementById("name").innerHTML =(`Name is ${event.data.pName} city is  ${event.data.pCity}`);
-        console.log(`Name is ${event.data.pName} city is  ${event.data.pCity}`);
-    });
-function closeMe() {
-        try {
-window.close();
-        } catch (e) { console.log(e) }
-        try {
-self.close();
-        } catch (e) { console.log(e) }
-}
-    
+        pluginIdval = event.data.pluginId;
+        secretKeyval = event.data.secretKey;
+        console.log(`pluginId is ${pluginIdval} secretKey is  ${secretKeyval}`);
+    });  
     </script>
+
 </head>
 <body>
     <div id="externalSystemContainer">
