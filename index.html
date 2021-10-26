@@ -43,6 +43,7 @@
           var secretKeyval = {};
           
     window.addEventListener("message", (event)=>{
+        console.log(event);
         pluginIdval = event.data.pluginId;
         secretKeyval = event.data.secretKey;
         console.log(`pluginId is ${pluginIdval} secretKey is  ${secretKeyval}`);
