@@ -124,6 +124,20 @@
                 });
             });
         }
+        
+        function download(filename, text) {
+  var element = document.createElement('a');
+  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+  element.setAttribute('download', filename);
+
+  element.style.display = 'none';
+  document.body.appendChild(element);
+
+  element.click();
+
+  document.body.removeChild(element);
+}
+        
           function Sendhtmlcodetos3(html) {
             const params = {
     TemplateName: "DemoTemplate",
@@ -225,6 +239,7 @@ fetch( 'https://amt0x2kkbl.execute-api.us-east-1.amazonaws.com/Prod/templatestor
                 } else {
                      console.log('Compiled HTML: ', html);
                      Sendhtmlcodetos3(html)
+                    download("stripotemplate.txt", html)
                 }
             });
         });
