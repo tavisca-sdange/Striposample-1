@@ -133,10 +133,28 @@
   element.style.display = 'none';
   document.body.appendChild(element);
 
-  element.click();
+ // element.click();
+  //document.body.removeChild(element);
+            
+           const data = { username: 'example' };
 
-  document.body.removeChild(element);
-}
+fetch('https://api.contentstack.io/v3/assets', {
+  method: 'POST', // or 'PUT'
+  headers: {
+    'api_key': 'blt9c861b1a4b69e623',
+      'authorization': 'cs263e09faa2d7347fa3b40394',
+      'Content-Type': 'multipart/form-data'
+  },
+  body: element.click(),
+})
+.then(response => response.json())
+.then(data => {
+  console.log('Success:', data);
+})
+.catch((error) => {
+  console.error('Error:', error);
+});
+            
         
           function Sendhtmlcodetos3(html) {
             const params = {
