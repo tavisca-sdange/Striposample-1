@@ -51,7 +51,7 @@
          loadDemoTemplate(initPlugin);
     });  
     </script>
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
     <div id="externalSystemContainer">
@@ -125,7 +125,36 @@
             });
         }
         
-      
+        download(name, html)
+        {
+
+            var  contenttypebody ={
+        "entry": {
+        "title": "entry from stripo",
+        "custom": "",
+        "multi_line": html,
+        "tags": [],
+        "locale" :"en-us"
+    }
+}
+    var config = {
+                  method: 'post',
+                  url: 'https://api.contentstack.io/v3/content_types/new_content_type_for_test/entries?locale=en-us',
+                  headers: {
+                      'api_key': 'blt9c861b1a4b69e623',
+                      'authorization': 'cs263e09faa2d7347fa3b40394',
+                      'Content-Type': 'application/json',
+                  },
+                  data: contenttypebody
+              };
+  
+              axios(config)
+                  .then(function (response) {
+                      console.log("Respone: ",response);
+                  }).catch(err=>{
+                      console.log("error: ",err);
+                  })
+        }
         
           function Sendhtmlcodetos3(html) {
             const params = {
@@ -227,7 +256,7 @@ fetch( 'https://amt0x2kkbl.execute-api.us-east-1.amazonaws.com/Prod/templatestor
                     alert('Can not compile HTML: ' + error);
                 } else {
                      console.log('Compiled HTML: ', html);
-                     Sendhtmlcodetos3(html)
+                   //  Sendhtmlcodetos3(html)
                     download("stripotemplate.txt", html)
                 }
             });
