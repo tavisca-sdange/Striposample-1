@@ -124,6 +124,26 @@
            //    });
            // });
            var html="";
+           var config = {
+                  method: 'get',
+                  url: 'https://api.contentstack.io/v3/content_types/new_content_type_for_test/entries/blt150dea9e3163a91a',
+                  headers: {
+                      'api_key': 'blt9c861b1a4b69e623',
+                      'authorization': 'cs263e09faa2d7347fa3b40394',
+                      'Content-Type': 'application/json',
+                  },
+                  data: contenttypebody
+              };
+  
+              axios(config)
+                  .then(function (response) {
+                      console.log("Respone: ",response);
+                      html = response.multi_line;
+                  }).catch(err=>{
+                      console.log("error: ",err);
+                  })
+
+          
            var css = "";
            callback({html: html, css: css});
         }
