@@ -149,7 +149,7 @@
             });
         }
         async function loadDemoTemplate(callback) {
-            if (EntryUID !== 'undefined') {
+            if (EntryUID == 'undefined') {
                 request('GET', 'https://raw.githubusercontent.com/ardas/stripo-plugin/master/Public-Templates/Basic-Templates/Trigger%20newsletter%20mockup/Trigger%20newsletter%20mockup.html', null, function (html) {
                     request('GET', 'https://raw.githubusercontent.com/ardas/stripo-plugin/master/Public-Templates/Basic-Templates/Trigger%20newsletter%20mockup/Trigger%20newsletter%20mockup.css', null, function (css) {
                         callback({ html: html, css: css });
@@ -300,10 +300,10 @@
                     getAuthToken: function (callback) {
                         request('POST', 'https://plugins.stripo.email/api/v1/auth',
                             JSON.stringify({
-                                   pluginId: 'f7daf1549bed437488ed8c1fe92f3e20',
+                                    pluginId: 'f7daf1549bed437488ed8c1fe92f3e20',
                                    secretKey: '6192a5b950614b5eb8ae05f20f395dec'
-                              //  pluginId: pluginIdval,
-                               // secretKey: secretKeyval
+                                //pluginId: pluginIdval,
+                                //secretKey: secretKeyval
                             }),
                             function (data) {
                                 callback(JSON.parse(data).token);
