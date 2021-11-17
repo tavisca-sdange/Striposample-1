@@ -130,7 +130,7 @@
             return new Promise(function (resolve, reject) {
                 var config = {
                     method: 'get',
-                    url: 'https://api.contentstack.io/v3/content_types/new_content_type_for_test/entries/blt150dea9e3163a91a',
+                    url: 'https://api.contentstack.io/v3/content_types/new_content_type_for_test/entries/'+EntryUID,
                     headers: {
                         'api_key': 'blt9c861b1a4b69e623',
                         'authorization': 'cs263e09faa2d7347fa3b40394',
@@ -168,7 +168,6 @@
 
                 var contenttypebody = {
                     "entry": {
-                        "title": "entry from stripo",
                         "custom": "",
                         "multi_line": html,
                         "tags": [],
@@ -196,7 +195,6 @@
             else {
                 var contenttypebody = {
                     "entry": {
-                        "title": "entry from stripo",
                         "custom": "",
                         "multi_line": html,
                         "tags": [],
