@@ -128,7 +128,7 @@
         }
         function loadtemplate()
           {
-  
+          
            return new Promise(function (resolve, reject) {
            var config = {
                   method: 'get',
@@ -151,8 +151,11 @@
             });
        }
        async function loadDemoTemplate(callback) {
-
-             var html =await loadtemplate()
+           var html ="";
+           if(EntryUID !="undifined")
+           {
+              html =await loadtemplate()
+             }
           var css = "";
           callback({html: html, css: css});
         }
