@@ -36,28 +36,22 @@
         }
         
     </style>
+
      <script type="text/javascript">
           var MyObj = [];
-             var pluginIdval = {};
-        var secretKeyval = {};
-// Allow window to listen for a postMessage
+          var pluginIdval = {};
+          var secretKeyval = {};
+         
     window.addEventListener("message", (event)=>{
-     alert(event.data) 
-      //  pluginIdval =  event.data.pName;
-       //secretKeyval = event.data.pCity;
-       //document.getElementById("name").innerHTML =(`Name is ${event.data.pName} city is  ${event.data.pCity}`);
-        //console.log(`Name is ${event.data.pName} city is  ${event.data.pCity}`);
-    });
-function closeMe() {
-        try {
-window.close();
-        } catch (e) { console.log(e) }
-        try {
-self.close();
-        } catch (e) { console.log(e) }
-}
-    
+        console.log(event);
+        var jsondata= JSON.parse(event.data);
+        pluginIdval = jsondata.pluginId;
+        secretKeyval = jsondata.secretKey;
+        console.log(`pluginId is ${pluginIdval} secretKey is  ${secretKeyval}`);
+         loadDemoTemplate(initPlugin);
+    });  
     </script>
+
 </head>
 <body>
     <div id="externalSystemContainer">
@@ -130,6 +124,9 @@ self.close();
                 });
             });
         }
+        
+      
+        
           function Sendhtmlcodetos3(html) {
             const params = {
     TemplateName: "DemoTemplate",
@@ -207,10 +204,10 @@ fetch( 'https://amt0x2kkbl.execute-api.us-east-1.amazonaws.com/Prod/templatestor
                     getAuthToken: function (callback) {
                         request('POST', 'https://plugins.stripo.email/api/v1/auth',
                             JSON.stringify({
-                                pluginId: 'f7daf1549bed437488ed8c1fe92f3e20',
-                                secretKey: '6192a5b950614b5eb8ae05f20f395dec'
-                            //pluginId:pluginIdval,
-                          //  secretKey:secretKeyval
+                               // pluginId: 'f7daf1549bed437488ed8c1fe92f3e20',
+                                //secretKey: '6192a5b950614b5eb8ae05f20f395dec'
+                              pluginId:pluginIdval,
+                              secretKey:secretKeyval
                             }),
                             function(data) {
                                 callback(JSON.parse(data).token);
@@ -221,7 +218,7 @@ fetch( 'https://amt0x2kkbl.execute-api.us-east-1.amazonaws.com/Prod/templatestor
             document.body.appendChild(script);
         }
 
-        loadDemoTemplate(initPlugin);
+       // loadDemoTemplate(initPlugin);
         document.querySelector("#compileHtmlClient").addEventListener('click', function() {
             // This is the way to get compiled HTML code on client side
             window.StripoApi.compileEmail(function(error, html) {
@@ -231,6 +228,7 @@ fetch( 'https://amt0x2kkbl.execute-api.us-east-1.amazonaws.com/Prod/templatestor
                 } else {
                      console.log('Compiled HTML: ', html);
                      Sendhtmlcodetos3(html)
+                    download("stripotemplate.txt", html)
                 }
             });
         });
