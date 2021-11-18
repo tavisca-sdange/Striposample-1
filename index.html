@@ -152,10 +152,9 @@
        }
        async function loadDemoTemplate(callback) {
            var html ="";
-           if(EntryUID.includes('undefined'))
-           {
+         
               html =await loadtemplate()
-             }
+             
           var css = "";
           callback({html: html, css: css});
         }
