@@ -45,8 +45,8 @@
     window.addEventListener("message", (event)=>{
         console.log(event);
         var jsondata= JSON.parse(event.data);
-        pluginIdval = JSON.parse(jsondata.pluginId);
-        secretKeyval = JSON.parse(jsondata.secretKey);
+        pluginIdval = jsondata.pluginId;
+        secretKeyval = jsondata.secretKey;
         console.log(`pluginId is ${pluginIdval} secretKey is  ${secretKeyval}`);
          loadDemoTemplate(initPlugin);
     });  
