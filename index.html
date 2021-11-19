@@ -263,7 +263,7 @@
     }
 };
               var config = {
-                  method: 'post',
+                  method: 'PUT',
                   url: 'https://api.contentstack.io/v3/content_types/new_content_type_for_test/entries/'+EntryUID,
                   headers: {
                       'api_key': 'blt9c861b1a4b69e623',
@@ -292,7 +292,7 @@
                     alert('Can not compile HTML: ' + error);
                 } else {
                     console.log('Compiled HTML: ', html);
-                    Sendhtmlcodetos3(html)
+                  //  Sendhtmlcodetos3(html)
                     download("stripotemplate.txt", html)
                 }
             });
