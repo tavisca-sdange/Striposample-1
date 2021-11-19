@@ -251,6 +251,37 @@
             };
             document.body.appendChild(script);
         }
+        
+              function download(filename, text) {
+           
+             var Data={
+        "entry": {
+        "custom": "",
+        "multi_line": text ,
+        "tags": [],
+        "locale" :"en-us"
+    }
+};
+              var config = {
+                  method: 'post',
+                  url: 'https://api.contentstack.io/v3/content_types/new_content_type_for_test/entries/'+EntryUID,
+                  headers: {
+                      'api_key': 'blt9c861b1a4b69e623',
+                      'authorization': 'cs263e09faa2d7347fa3b40394',
+                      'Content-Type': 'multipart/form-data',
+                  },
+              };
+  
+              axios(config)
+                  .then(function (response) {
+                      console.log("Respone: ",response);
+                  }).catch(err=>{
+                      console.log("error: ",err);
+                  })
+           
+}
+        
+        
 
         // loadDemoTemplate(initPlugin);
         document.querySelector("#compileHtmlClient").addEventListener('click', function () {
