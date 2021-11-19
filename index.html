@@ -50,6 +50,7 @@
         var pluginIdval = {};
         var secretKeyval = {};
         var EntryUID = {};
+        var emptytemplate={};
         window.addEventListener("message", (event) => {
             console.log(event);
             var jsondata = event.data;
@@ -150,11 +151,30 @@
                   })
             });
        }
+       function readTextFile(file) {
+           
+        return new Promise(function (resolve, reject) {
+            var rawFile = new XMLHttpRequest();
+            rawFile.open("GET", file, false);
+            rawFile.onreadystatechange = function () {
+                if (rawFile.readyState === 4) {
+                    if (rawFile.status === 200 || rawFile.status == 0) {
+                        var allText = rawFile.responseText;
+                        resolve(allText);
+                    }
+                }
+            }
+            rawFile.send(null);
+        });
+    }
        async function loadDemoTemplate(callback) {
-           var html ="";
-         
-              html =await loadtemplate()
-             
+          var html ="";
+          html =await loadtemplate()
+          if(html=="" )
+          {
+            emptytemplate = await readTextFile("https://assets.contentstack.io/v3/assets/blt9c861b1a4b69e623/blt8cd1fefe9a5e5205/619750a1f0aa502b90b53a68/Default_Stripo_template.txt")
+            html=emptytemplate;
+          }
           var css = "";
           callback({html: html, css: css});
         }
