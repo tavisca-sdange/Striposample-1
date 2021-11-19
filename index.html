@@ -150,16 +150,11 @@
                   })
             });
        }
-     
        async function loadDemoTemplate(callback) {
            var html ="";
          
               html =await loadtemplate()
-          //   if(html=="")
-           //  {
-             //   await readTextFile("https://assets.contentstack.io/v3/assets/blt9c861b1a4b69e623/blt8cd1fefe9a5e5205/619750a1f0aa502b90b53a68/Default_Stripo_template.txt")
-              //   html= emptytemplate;
-            // }   
+             
           var css = "";
           callback({html: html, css: css});
         }
@@ -243,10 +238,10 @@
                     getAuthToken: function (callback) {
                         request('POST', 'https://plugins.stripo.email/api/v1/auth',
                             JSON.stringify({
-                                pluginId: 'f7daf1549bed437488ed8c1fe92f3e20',
-                                secretKey: '6192a5b950614b5eb8ae05f20f395dec'
-                                //pluginId: pluginIdval,
-                                //secretKey: secretKeyval
+                                // pluginId: 'f7daf1549bed437488ed8c1fe92f3e20',
+                                //secretKey: '6192a5b950614b5eb8ae05f20f395dec'
+                                pluginId: pluginIdval,
+                                secretKey: secretKeyval
                             }),
                             function (data) {
                                 callback(JSON.parse(data).token);
@@ -290,7 +285,6 @@
 }
         
         
-
         // loadDemoTemplate(initPlugin);
         document.querySelector("#compileHtmlClient").addEventListener('click', function () {
             // This is the way to get compiled HTML code on client side
