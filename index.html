@@ -276,8 +276,10 @@
               axios(config)
                   .then(function (response) {
                       console.log("Respone: ",response);
+                  alert("Entry has been updated successfully");
                   }).catch(err=>{
                       console.log("error: ",err);
+                   alert("Entry failed);
                   })
            
 }
