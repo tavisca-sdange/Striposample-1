@@ -308,15 +308,17 @@
         // loadDemoTemplate(initPlugin);
         document.querySelector("#compileHtmlClient").addEventListener('click', function () {
             // This is the way to get compiled HTML code on client side
-            window.StripoApi.getTemplate((html, css)=>{console.log(html)})
+             window.StripoApi.getTemplate(function(html, css)
+            {
+              //  console.log(html)
+                   download("stripotemplate.txt", html)
+            })
             window.StripoApi.compileEmail(function (error, html) {
                 console
                 if (error) {
                     alert('Can not compile HTML: ' + error);
                 } else {
-                    console.log('Compiled HTML: ', html);
-                  //  Sendhtmlcodetos3(html)
-                    download("stripotemplate.txt", html)
+                   // console.log('Compiled HTML: ', html);
                 }
             });
         });
