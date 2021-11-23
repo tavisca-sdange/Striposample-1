@@ -310,7 +310,7 @@
             // This is the way to get compiled HTML code on client side
              window.StripoApi.getTemplate(function(html, css)
             {
-              //  console.log(html)
+               console.log(html)
                    download("stripotemplate.txt", html)
             })
             window.StripoApi.compileEmail(function (error, html) {
