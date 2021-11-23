@@ -308,6 +308,7 @@
         // loadDemoTemplate(initPlugin);
         document.querySelector("#compileHtmlClient").addEventListener('click', function () {
             // This is the way to get compiled HTML code on client side
+            window.StripoApi.getTemplate((html, css)=>{console.log(html)})
             window.StripoApi.compileEmail(function (error, html) {
                 console
                 if (error) {
